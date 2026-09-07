@@ -43,8 +43,8 @@ If the Upstox token expires, the Action fails loudly but the site keeps serving 
 ### 1. Clone and install
 
 ```bash
-git clone https://github.com/SushantKadam73/reit-invit-tracker.git
-cd reit-invit-tracker
+git clone https://github.com/SushantKadam73/REIT-and-INVIT-Tracker-.git
+cd REIT-and-INVIT-Tracker-
 npm install
 ```
 
@@ -56,19 +56,34 @@ npm run dev
 
 Open http://localhost:3000
 
-### 3. Add GitHub secrets
+### 3. Add the GitHub Actions workflows (one-time, 2 minutes)
 
-Go to **Settings → Secrets and variables → Actions** and add:
+The two workflow files live in `.github/workflows/` **in this project folder** — GitHub wouldn't
+let the automated tool push them (workflow files need a special permission on the token), so you
+add them once by hand:
 
-- `UPSTOX_TOKEN` — your Upstox API access token (required for nightly price refresh)
-- `TINYFISH_API_KEY` — optional, reserved for future research features
+1. Open the repo on GitHub → **Add file → Create new file**.
+2. As the filename, paste: `.github/workflows/refresh.yml`
+3. Paste the contents of `.github/workflows/refresh.yml` from this folder → **Commit changes**.
+4. Repeat for `.github/workflows/build.yml`.
 
-### 4. Deploy to Vercel
+That's it — the nightly refresh is now scheduled.
 
-1. Push this repo to GitHub.
-2. Go to https://vercel.com/new and import the repo.
-3. Vercel auto-detects Next.js. No build settings needed.
-4. Deploy. The site is live immediately with seeded data.
+### 4. Add GitHub secrets
+
+Go to **Settings → Secrets and variables → Actions → New repository secret** and add:
+
+- `UPSTOX_TOKEN` — your Upstox API access token (required for the nightly price refresh).
+  Upstox tokens usually expire after ~24h. When the Action starts failing with a 401, regenerate
+  the token at https://api.upstox.com (login → "Apps" → your app → generate token) and update this
+  secret. The site keeps showing the last good data in the meantime — nothing breaks.
+- `TINYFISH_API_KEY` — optional, reserved for future research features.
+
+### 5. Deploy to Vercel
+
+1. Go to https://vercel.com/new and import `SushantKadam73/REIT-and-INVIT-Tracker-`.
+2. Vercel auto-detects Next.js. No build settings to change (vercel.json is committed).
+3. Click **Deploy**. The site is live immediately with seeded data.
 
 ## How to add a new trust
 
