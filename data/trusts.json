@@ -1,0 +1,172 @@
+{
+  "version": "1.0.0",
+  "asOf": "2026-09-07",
+  "source": "BSE India public API + official trust IR pages",
+  "universe": [
+    {
+      "isin": "INE041025011",
+      "nseSymbol": "EMBASSY",
+      "bseCode": "542602",
+      "name": "Embassy Office Parks REIT",
+      "type": "REIT",
+      "sector": "Office",
+      "sponsor": "Embassy Group + Blackstone",
+      "listedDate": "2019-04-02",
+      "lotSize": 1
+    },
+    {
+      "isin": "INE0CCU25019",
+      "nseSymbol": "MINDSPACE",
+      "bseCode": "543217",
+      "name": "Mindspace Business Parks REIT",
+      "type": "REIT",
+      "sector": "Office",
+      "sponsor": "K Raheja Corp + Blackstone",
+      "listedDate": "2020-08-07",
+      "lotSize": 1
+    },
+    {
+      "isin": "INE0FDU25010",
+      "nseSymbol": "BIRET",
+      "bseCode": "543261",
+      "name": "Brookfield India Real Estate Trust",
+      "type": "REIT",
+      "sector": "Office",
+      "sponsor": "Brookfield",
+      "listedDate": "2021-02-16",
+      "lotSize": 1
+    },
+    {
+      "isin": "INE0NDH25011",
+      "nseSymbol": "NXST",
+      "bseCode": "543913",
+      "name": "Nexus Select Trust",
+      "type": "REIT",
+      "sector": "Retail",
+      "sponsor": "Blackstone",
+      "listedDate": "2023-05-19",
+      "lotSize": 1
+    },
+    {
+      "isin": "INE1JAR25012",
+      "nseSymbol": "KRT",
+      "bseCode": "544481",
+      "name": "Knowledge Realty Trust",
+      "type": "REIT",
+      "sector": "Office",
+      "sponsor": "Sattva Group + Blackstone",
+      "listedDate": "2025-08-18",
+      "lotSize": 1
+    },
+    {
+      "isin": "INE2OVN25015",
+      "nseSymbol": "BAGMANE",
+      "bseCode": "544758",
+      "name": "Bagmane Prime Office REIT",
+      "type": "REIT",
+      "sector": "Office",
+      "sponsor": "Bagmane Group",
+      "listedDate": "2026-05-14",
+      "lotSize": 1
+    },
+    {
+      "isin": "INE183W23014",
+      "nseSymbol": "IRBINVIT",
+      "bseCode": "540526",
+      "name": "IRB InvIT Fund",
+      "type": "InvIT",
+      "sector": "Toll Roads",
+      "sponsor": "IRB Infrastructure",
+      "listedDate": "2017-05-18",
+      "lotSize": 1
+    },
+    {
+      "isin": "INE219X23014",
+      "nseSymbol": "INDIGRID",
+      "bseCode": "540565",
+      "name": "IndiGrid Infrastructure Trust",
+      "type": "InvIT",
+      "sector": "Power Transmission",
+      "sponsor": "KKR + Sterlite Power",
+      "listedDate": "2017-06-06",
+      "lotSize": 1
+    },
+    {
+      "isin": "INE0GGX23010",
+      "nseSymbol": "PGINVIT",
+      "bseCode": "543290",
+      "name": "POWERGRID Infrastructure Investment Trust",
+      "type": "InvIT",
+      "sector": "Power Transmission",
+      "sponsor": "Power Grid Corporation of India",
+      "listedDate": "2021-05-14",
+      "lotSize": 1
+    },
+    {
+      "isin": "INE0NHL23019",
+      "nseSymbol": "INDUSINVIT",
+      "bseCode": "544137",
+      "name": "Indus Infra Trust",
+      "type": "InvIT",
+      "sector": "Toll Roads (HAM)",
+      "sponsor": "G R Infraprojects",
+      "listedDate": "2024-03-06",
+      "lotSize": 1
+    },
+    {
+      "isin": "INE0Z8Z23013",
+      "nseSymbol": "CAPINVIT",
+      "bseCode": "544338",
+      "name": "Capital Infra Trust",
+      "type": "InvIT",
+      "sector": "Infrastructure",
+      "sponsor": "Capital Infra",
+      "listedDate": "2025-01-17",
+      "lotSize": 1
+    },
+    {
+      "isin": "INE1UA823019",
+      "nseSymbol": "ANANTAM",
+      "bseCode": "544579",
+      "name": "Anantam Highways Trust",
+      "type": "InvIT",
+      "sector": "Highways",
+      "sponsor": "Alpha Alternatives",
+      "listedDate": "2025-10-16",
+      "lotSize": 1
+    },
+    {
+      "isin": "INE2PB023011",
+      "nseSymbol": "RIIT",
+      "bseCode": "544734",
+      "name": "Raajmarg Infra Investment Trust",
+      "type": "InvIT",
+      "sector": "Highways",
+      "sponsor": "NHAI",
+      "listedDate": "2026-03-24",
+      "lotSize": 1
+    },
+    {
+      "isin": "INE2Q7823014",
+      "nseSymbol": "CITIUSINVT",
+      "bseCode": "544753",
+      "name": "Citius TransNet Investment Trust",
+      "type": "InvIT",
+      "sector": "Infrastructure",
+      "sponsor": "Citius",
+      "listedDate": "2026-04-29",
+      "lotSize": 1
+    },
+    {
+      "isin": "INE0NR623014",
+      "nseSymbol": "CUBEINVIT",
+      "bseCode": "543899",
+      "name": "Cube Highways Trust",
+      "type": "InvIT",
+      "sector": "Toll Roads",
+      "sponsor": "Cube Highways",
+      "listedDate": "2026-07-31",
+      "lotSize": 1
+    }
+  ]
+}

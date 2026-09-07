@@ -1,0 +1,152 @@
+{
+  "INE041025011": {
+    "symbol": "EMBASSY",
+    "name": "Embassy Office Parks REIT",
+    "type": "REIT",
+    "price": 438.83,
+    "prevClose": 438.57,
+    "change1d": 0.06,
+    "asOf": "2026-09-07",
+    "source": "BSE India public API (EOD)"
+  },
+  "INE0CCU25019": {
+    "symbol": "MINDSPACE",
+    "name": "Mindspace Business Parks REIT",
+    "type": "REIT",
+    "price": 497.42,
+    "prevClose": 501.2,
+    "change1d": -0.69,
+    "asOf": "2026-09-07",
+    "source": "BSE India public API (EOD)"
+  },
+  "INE0FDU25010": {
+    "symbol": "BIRET",
+    "name": "Brookfield India Real Estate Trust",
+    "type": "REIT",
+    "price": 341.65,
+    "prevClose": 341.55,
+    "change1d": -0.07,
+    "asOf": "2026-09-07",
+    "source": "BSE India public API (EOD)"
+  },
+  "INE0NDH25011": {
+    "symbol": "NXST",
+    "name": "Nexus Select Trust",
+    "type": "REIT",
+    "price": 167.3,
+    "prevClose": 164.22,
+    "change1d": 1.76,
+    "asOf": "2026-09-07",
+    "source": "BSE India public API (EOD)"
+  },
+  "INE1JAR25012": {
+    "symbol": "KRT",
+    "name": "Knowledge Realty Trust",
+    "type": "REIT",
+    "price": 113.1,
+    "prevClose": 112.57,
+    "change1d": 0.52,
+    "asOf": "2026-09-07",
+    "source": "BSE India public API (EOD)"
+  },
+  "INE2OVN25015": {
+    "symbol": "BAGMANE",
+    "name": "Bagmane Prime Office REIT",
+    "type": "REIT",
+    "price": 107.55,
+    "prevClose": 106.44,
+    "change1d": 0.97,
+    "asOf": "2026-09-07",
+    "source": "BSE India public API (EOD)"
+  },
+  "INE183W23014": {
+    "symbol": "IRBINVIT",
+    "name": "IRB InvIT Fund",
+    "type": "InvIT",
+    "price": 64.8,
+    "prevClose": 64.71,
+    "change1d": 0.08,
+    "asOf": "2026-09-07",
+    "source": "BSE India public API (EOD)"
+  },
+  "INE219X23014": {
+    "symbol": "INDIGRID",
+    "name": "IndiGrid Infrastructure Trust",
+    "type": "InvIT",
+    "price": 175.35,
+    "prevClose": 175.48,
+    "change1d": -0.06,
+    "asOf": "2026-09-07",
+    "source": "BSE India public API (EOD)"
+  },
+  "INE0GGX23010": {
+    "symbol": "PGINVIT",
+    "name": "POWERGRID Infrastructure Investment Trust",
+    "type": "InvIT",
+    "price": 102.51,
+    "prevClose": 101.18,
+    "change1d": 1.31,
+    "asOf": "2026-09-07",
+    "source": "BSE India public API (EOD)"
+  },
+  "INE0NHL23019": {
+    "symbol": "INDUSINVIT",
+    "name": "Indus Infra Trust",
+    "type": "InvIT",
+    "price": 133.93,
+    "prevClose": 134.31,
+    "change1d": -0.9,
+    "asOf": "2026-09-07",
+    "source": "BSE India public API (EOD)"
+  },
+  "INE0Z8Z23013": {
+    "symbol": "CAPINVIT",
+    "name": "Capital Infra Trust",
+    "type": "InvIT",
+    "price": 76.9,
+    "prevClose": 76.76,
+    "change1d": 0.17,
+    "asOf": "2026-09-07",
+    "source": "BSE India public API (EOD)"
+  },
+  "INE1UA823019": {
+    "symbol": "ANANTAM",
+    "name": "Anantam Highways Trust",
+    "type": "InvIT",
+    "price": 106.45,
+    "prevClose": 106,
+    "change1d": 0.42,
+    "asOf": "2026-09-07",
+    "source": "BSE India public API (EOD)"
+  },
+  "INE2PB023011": {
+    "symbol": "RIIT",
+    "name": "Raajmarg Infra Investment Trust",
+    "type": "InvIT",
+    "price": 121.4,
+    "prevClose": 121.64,
+    "change1d": -0.16,
+    "asOf": "2026-09-07",
+    "source": "BSE India public API (EOD)"
+  },
+  "INE2Q7823014": {
+    "symbol": "CITIUSINVT",
+    "name": "Citius TransNet Investment Trust",
+    "type": "InvIT",
+    "price": 116.1,
+    "prevClose": 116.06,
+    "change1d": 0.01,
+    "asOf": "2026-09-07",
+    "source": "BSE India public API (EOD)"
+  },
+  "INE0NR623014": {
+    "symbol": "CUBEINVIT",
+    "name": "Cube Highways Trust",
+    "type": "InvIT",
+    "price": 157,
+    "prevClose": 157.33,
+    "change1d": 0.13,
+    "asOf": "2026-09-07",
+    "source": "BSE India public API (EOD)"
+  }
+}
