@@ -1,3 +1,4 @@
+// Methodology & sources — what each metric means and where the data comes from.
 export const metadata = { title: "Methodology & Sources — REIT/InvIT Tracker" };
 
 export default function MethodologyPage() {
