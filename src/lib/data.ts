@@ -20,6 +20,9 @@ import type {
 export const universe = universeJson as unknown as Universe;
 export const trusts: Trust[] = universe.universe;
 
+// NOTE on keying: prices.json and data/history/* are keyed by ISIN, but
+// distributions.json and fundamentals.json are keyed by NSE symbol.
+// Look each up with its own key or they silently come back empty.
 const prices = pricesJson as unknown as Record<string, PriceInfo>;
 const distributions = distributionsJson as unknown as Record<string, Distribution[]>;
 const fundamentals = fundamentalsJson as unknown as Record<string, Fundamentals>;
@@ -58,8 +61,8 @@ export function getTrustData(symbolOrIsin: string): TrustData | undefined {
   return {
     trust,
     price: prices[trust.isin] || null,
-    fundamentals: fundamentals[trust.isin] || null,
-    distributions: distributions[trust.isin] || [],
+    fundamentals: fundamentals[trust.nseSymbol] || null,
+    distributions: distributions[trust.nseSymbol] || [],
     history: [], // filled by getTrustDataAsync on detail pages
   };
 }

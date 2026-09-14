@@ -48,31 +48,34 @@ export function formatPctPlain(value: number | null | undefined, decimals = 2): 
   return `${value.toFixed(decimals)}%`;
 }
 
-/** Format an ISO date as "07 Sep 2026" (IST). */
-export function formatDate(iso: string | null | undefined): string {
-  if (!iso) return "—";
+/** Parse an ISO date (or ISO date-only) safely; returns null when invalid. */
+function parseDate(iso: string | null | undefined): Date | null {
+  if (!iso) return null;
   try {
     const d = new Date(iso.length === 10 ? iso + "T00:00:00+05:30" : iso);
-    return d.toLocaleDateString("en-IN", {
-      day: "2-digit",
-      month: "short",
-      year: "numeric",
-      timeZone: "Asia/Kolkata",
-    });
+    return isNaN(d.getTime()) ? null : d;
   } catch {
-    return iso;
+    return null;
   }
+}
+
+/** Format an ISO date as "07 Sep 2026" (IST). Never returns "Invalid Date". */
+export function formatDate(iso: string | null | undefined): string {
+  const d = parseDate(iso);
+  if (!d) return iso && iso.trim() ? iso : "—";
+  return d.toLocaleDateString("en-IN", {
+    day: "2-digit",
+    month: "short",
+    year: "numeric",
+    timeZone: "Asia/Kolkata",
+  });
 }
 
 /** How many days old an ISO date is (for stale-data badges). */
 export function daysSince(iso: string | null | undefined): number | null {
-  if (!iso) return null;
-  try {
-    const then = new Date(iso.length === 10 ? iso + "T00:00:00+05:30" : iso).getTime();
-    return Math.floor((Date.now() - then) / 86400000);
-  } catch {
-    return null;
-  }
+  const d = parseDate(iso);
+  if (!d) return null;
+  return Math.floor((Date.now() - d.getTime()) / 86400000);
 }
 
 /** Parse a user-entered amount that may contain lakh/crore words or commas. */
