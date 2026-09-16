@@ -49,8 +49,12 @@ const historyMap: Record<string, () => Promise<PricePoint[]>> = {
 };
 
 export function getTrust(symbolOrIsin: string): Trust | undefined {
+  if (!symbolOrIsin) return undefined;
+  const needle = symbolOrIsin.toUpperCase();
   return trusts.find(
-    (t) => t.nseSymbol.toUpperCase() === symbolOrIsin.toUpperCase() || t.isin === symbolOrIsin
+    (t) =>
+      (t.nseSymbol && t.nseSymbol.toUpperCase() === needle) ||
+      (t.isin && t.isin === symbolOrIsin)
   );
 }
 
@@ -77,9 +81,14 @@ export async function getTrustDataAsync(symbolOrIsin: string): Promise<TrustData
 }
 
 export function getAllTrustData(): TrustData[] {
-  return trusts.map((t) => getTrustData(t.isin)!).filter(Boolean);
+  // Skip auto-discovered stubs (needsReview / null isin) — they can't be priced
+  // and have no fundamentals yet, so they must not reach the UI.
+  return trusts
+    .filter((t) => t.isin && !(t as any).needsReview)
+    .map((t) => getTrustData(t.isin)!)
+    .filter(Boolean);
 }
 
 export function getTrustsByType(type: "REIT" | "InvIT"): TrustData[] {
-  return getAllTrustData().filter((d) => d.trust.type === type);
+  return getAllTrustData().filter((d) => d.trust.type === type && d.trust.isin);
 }
