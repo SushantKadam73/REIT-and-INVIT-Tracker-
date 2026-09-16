@@ -23,20 +23,68 @@ Deploy: Vercel (free hobby tier)
 ## Data model
 
 - `data/trusts.json` — canonical universe (ISIN, symbols, sector, sponsor, listed date)
-- `data/prices.json` — latest EOD price, previous close, 1-day change, as-of date, source
-- `data/distributions.json` — distribution history per trust (quarter, FY, DPU, component split, dates, source)
-- `data/fundamentals.json` — NAV, LTV, occupancy/concession life, GAV, market cap, as-of dates
-- `data/history/<ISIN>.json` — daily EOD close history (last ~2 years)
+- `data/prices.json` — latest EOD price, previous close, 1-day change, as-of date, source — **keyed by ISIN**
+- `data/history/<ISIN>.json` — daily EOD close history (last ~13 months) — **keyed by ISIN**
+- `data/distributions.json` — distribution history per trust (quarter, FY, DPU, component split, dates, source) — **keyed by NSE symbol**
+- `data/fundamentals.json` — NAV, LTV, occupancy/concession life, GAV, market cap, as-of dates — **keyed by NSE symbol**
+- `data/filings-queue.json` — distribution filings discovered on NSE, awaiting PDF parsing
+- `data/alerts.json` — parser fallbacks, token failures, new-trust discoveries (drained by notify.mjs)
 
 ## How the nightly refresh works
 
-1. GitHub Action triggers at 17:30 IST (after market close).
-2. `scripts/refresh-prices.ts` fetches EOD prices + candles from Upstox v2 API using `UPSTOX_TOKEN` secret.
-3. It recomputes derived metrics (TTM yield, recurring yield, NAV premium/discount).
-4. It commits updated `data/prices.json` and `data/history/*.json` back to the repo.
-5. Vercel rebuilds the static site with fresh data.
+GitHub Action `.github/workflows/refresh.yml` runs at **17:45 IST Mon–Fri** (`15 12 * * 1-5` UTC)
+plus manual `workflow_dispatch`. Four jobs, all `continue-on-error` — a failure never wipes
+last-good data:
 
-If the Upstox token expires, the Action fails loudly but the site keeps serving last-good data.
+1. **Prices** (`scripts/refresh-prices.mjs`) — fetches daily candles per trust from the Upstox
+   v2 historical-candle API (`NSE_EQ|<ISIN>`) and rewrites `data/prices.json` +
+   `data/history/<ISIN>.json`. Only overwrites prices.json if ≥ half the universe succeeded.
+2. **Discovery** (`scripts/discover.mjs`) — reads the NSE `corporate-announcements?index=invitsreits`
+   feed. Unknown REIT/InvIT-looking symbols are appended to `trusts.json` as `needsReview:true`
+   stubs (NCDs/CPs filtered out); distribution-ish filings go to `data/filings-queue.json`.
+3. **Distributions + fundamentals** (`scripts/parse-distributions.mjs`, `scripts/fundamentals.mjs`) —
+   queued PDFs are downloaded, text-extracted (poppler `pdftotext`, `pdf-parse` fallback) and parsed
+   via per-trust templates in `scripts/parsers/<SYMBOL>.mjs` (generic fallback). Fundamentals are
+   cross-checked against the Upstox Fundamentals API by ISIN (company-profile / key-ratios /
+   corporate-actions). **The component split is never fabricated**: if the parsed components don't
+   sum to totalDPU within ±0.05, the row is saved with split fields `null` +
+   `note: "split unavailable — format not recognised"` and the filing is flagged in
+   `data/alerts.json`. Upstox corporate-actions only returns a single amount — it's used as a
+   divergence cross-check, never as the split source.
+4. **Validate + alert + commit** — `scripts/validate-data.mjs` guards the keying contract
+   (prices/history ISIN-keyed; distributions/fundamentals symbol-keyed) and component sums;
+   `scripts/notify.mjs` POSTs any alerts to `ALERT_WEBHOOK_URL` if set (logged otherwise); the bot
+   commits changed `data/` back to `main` and Vercel rebuilds.
+
+### The Analytics token (required)
+
+Prices use the **Upstox Analytics token** — a 1-year, read-only, free token. No static IP needed,
+no daily regeneration (the old daily-expiry `UPSTOX_TOKEN` flow is gone).
+
+- Get it: https://account.upstox.com/developer/apps → your app → **Analytics** → generate token.
+- On expiry the refresh logs `Analytics token expired — regenerate at
+  account.upstox.com/developer/apps → Analytics`, raises an alert, and the site keeps serving
+  last-good data.
+
+### Secrets (2)
+
+Repo → **Settings → Secrets and variables → Actions**:
+
+- `UPSTOX_ANALYTICS_TOKEN` — **required**, the 1-year Analytics token above.
+- `ALERT_WEBHOOK_URL` — **optional**, any generic JSON webhook (Telegram/Discord/Slack-style).
+  Unset = alerts are only written to the Action log and `data/alerts.json`.
+
+### Rate limits & backoff
+
+EOD only, once per weekday night, ~300–500 ms politeness delay between calls; the free GitHub
+Actions tier (2000 min/month) is vastly more than the few minutes this uses. On a 401 the scripts
+stop hammering immediately and alert.
+
+### Last-good-data policy
+
+Every job merges with the previously committed JSON; `prices.json` is only rewritten when at least
+half the universe refreshed successfully. A bad token, an NSE outage, or an unparseable PDF can
+never blank the site.
 
 ## Setup
 
@@ -56,28 +104,23 @@ npm run dev
 
 Open http://localhost:3000
 
-### 3. Add the GitHub Actions workflows (one-time, 2 minutes)
+### 3. The GitHub Actions workflow
 
-The two workflow files live in `.github/workflows/` **in this project folder** — GitHub wouldn't
-let the automated tool push them (workflow files need a special permission on the token), so you
-add them once by hand:
-
-1. Open the repo on GitHub → **Add file → Create new file**.
-2. As the filename, paste: `.github/workflows/refresh.yml`
-3. Paste the contents of `.github/workflows/refresh.yml` from this folder → **Commit changes**.
-4. Repeat for `.github/workflows/build.yml`.
-
-That's it — the nightly refresh is now scheduled.
+`.github/workflows/refresh.yml` is committed in the repo — nothing to add by hand. It schedules
+the nightly refresh at 17:45 IST Mon–Fri and can also be triggered manually from the
+**Actions → Nightly data refresh → Run workflow** button.
 
 ### 4. Add GitHub secrets
 
 Go to **Settings → Secrets and variables → Actions → New repository secret** and add:
 
-- `UPSTOX_TOKEN` — your Upstox API access token (required for the nightly price refresh).
-  Upstox tokens usually expire after ~24h. When the Action starts failing with a 401, regenerate
-  the token at https://api.upstox.com (login → "Apps" → your app → generate token) and update this
-  secret. The site keeps showing the last good data in the meantime — nothing breaks.
-- `TINYFISH_API_KEY` — optional, reserved for future research features.
+- `UPSTOX_ANALYTICS_TOKEN` — **required.** The 1-year read-only Upstox Analytics token
+  (https://account.upstox.com/developer/apps → your app → Analytics). No static IP needed, no
+  daily regeneration. When the Action logs a 401, regenerate it there and update this secret —
+  the site keeps showing last-good data in the meantime.
+- `ALERT_WEBHOOK_URL` — **optional.** Any generic webhook URL (Telegram/Discord/Slack-style).
+  Alerts (token expiry, unparseable distribution PDFs, newly discovered trusts) are POSTed here;
+  if unset they're just written to the Action log.
 
 ### 5. Deploy to Vercel
 
