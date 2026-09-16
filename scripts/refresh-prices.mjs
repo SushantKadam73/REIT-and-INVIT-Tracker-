@@ -26,7 +26,7 @@ import { join, dirname } from "path";
 import { fileURLToPath } from "url";
 
 const root = join(dirname(fileURLToPath(import.meta.url)), "..");
-const TOKEN = process.env.UPSTOX_ANALYTICS_TOKEN;
+const TOKEN = process.env.UPSTOX_ANALYTICS_TOKEN || process.env.UPSTOX_API_KEY;
 
 const alertsPath = join(root, "data/alerts.json");
 
@@ -42,7 +42,7 @@ function addAlert(type, message) {
 }
 
 if (!TOKEN) {
-  console.error("ERROR: UPSTOX_ANALYTICS_TOKEN is not set.");
+  console.error("ERROR: no Upstox token set (expected secret UPSTOX_ANALYTICS_TOKEN or UPSTOX_API_KEY).");
   console.error("Add it in GitHub: repo → Settings → Secrets and variables → Actions → New repository secret.");
   console.error("Get the 1-year read-only Analytics token at account.upstox.com/developer/apps → your app → Analytics.");
   process.exit(1);
