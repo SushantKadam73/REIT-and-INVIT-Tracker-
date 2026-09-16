@@ -61,5 +61,5 @@ jobs:
           fi
           git commit -m "chore(data): nightly refresh $(date -u +%Y-%m-%d) [skip ci]"
           git pull --rebase origin main
-          git push origin HEAD:main
+          git push
         
