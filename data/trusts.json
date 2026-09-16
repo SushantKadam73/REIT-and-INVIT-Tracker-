@@ -167,6 +167,48 @@
       "sponsor": "Cube Highways",
       "listedDate": "2026-07-31",
       "lotSize": 1
+    },
+    {
+      "isin": null,
+      "nseSymbol": "VERTIS",
+      "bseCode": null,
+      "name": "VERTIS",
+      "type": null,
+      "sector": null,
+      "sponsor": null,
+      "listedDate": null,
+      "lotSize": 1,
+      "needsReview": true,
+      "firstSeen": "16-Sep-202",
+      "note": "Auto-discovered from NSE invitsreits feed — fill in ISIN/BSE/type before prices can refresh."
+    },
+    {
+      "isin": null,
+      "nseSymbol": "INTERISE",
+      "bseCode": null,
+      "name": "INTERISE",
+      "type": null,
+      "sector": null,
+      "sponsor": null,
+      "listedDate": null,
+      "lotSize": 1,
+      "needsReview": true,
+      "firstSeen": "16-Sep-202",
+      "note": "Auto-discovered from NSE invitsreits feed — fill in ISIN/BSE/type before prices can refresh."
+    },
+    {
+      "isin": null,
+      "nseSymbol": "NXT-INFRA",
+      "bseCode": null,
+      "name": "NXT-INFRA",
+      "type": null,
+      "sector": null,
+      "sponsor": null,
+      "listedDate": null,
+      "lotSize": 1,
+      "needsReview": true,
+      "firstSeen": "10-Sep-202",
+      "note": "Auto-discovered from NSE invitsreits feed — fill in ISIN/BSE/type before prices can refresh."
     }
   ]
 }
