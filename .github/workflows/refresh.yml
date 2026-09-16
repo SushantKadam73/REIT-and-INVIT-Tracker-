@@ -18,38 +18,45 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 25
     env:
-      UPSTOX_ANALYTICS_TOKEN: ${{ secrets.UPSTOX_ANALYTICS_TOKEN }}
+      UPSTOX_ANALYTICS_TOKEN: ${{ secrets.UPSTOX_ANALYTICS_TOKEN || secrets.UPSTOX_API_KEY }}
       ALERT_WEBHOOK_URL: ${{ secrets.ALERT_WEBHOOK_URL }}
     steps:
       - uses: actions/checkout@v4
+
       - uses: actions/setup-node@v4
         with:
           node-version: 20
+           # poppler-utils provides pdftotext for PDF parsing; pdf-parse is the fallback.
       - name: Install PDF tooling
         run: |
           sudo apt-get update -qq && sudo apt-get install -y -qq poppler-utils
           npm install --no-save pdf-parse
+
+      # Every step is allowed to fail without failing the job: the site serves
+      # last-good committed data, and notify.mjs reports what went wrong.
       - name: Refresh EOD prices (Upstox Analytics token)
         continue-on-error: true
         run: node scripts/refresh-prices.mjs
+
       - name: Discover new trusts + distribution filings (NSE)
         continue-on-error: true
         run: node scripts/discover.mjs
+
       - name: Parse distribution PDFs
         continue-on-error: true
         run: node scripts/parse-distributions.mjs
+
       - name: Cross-check fundamentals (Upstox by ISIN)
         continue-on-error: true
         run: node scripts/fundamentals.mjs
       - name: Validate data
         continue-on-error: true
         run: node scripts/validate-data.mjs
+
       - name: Send alerts (if any)
         if: always()
         run: node scripts/notify.mjs
-      - name: Send alerts (if any)
-        if: always()
-        run: node scripts/notify.mjs
+
       - name: Commit updated data
         run: |
           git config user.name "github-actions[bot]"
@@ -60,7 +67,7 @@ jobs:
             exit 0
           fi
           git commit -m "chore(data): nightly refresh $(date -u +%Y-%m-%d) [skip ci]"
+          # Rebase onto any commits that landed while this job ran (e.g. a manual
+          # push) so the bot push is never rejected as non-fast-forward.
           git pull --rebase origin main
           git push
-        
-        
