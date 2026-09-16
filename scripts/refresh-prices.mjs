@@ -68,8 +68,13 @@ async function upstox(path) {
     err.status = 401;
     throw err;
   }
-  if (!res.ok) throw new Error(`Upstox ${path} -> HTTP ${res.status}: ${(await res.text()).slice(0, 200)}`);
-  return res.json();
+  const body = await res.text();
+  let parsed = null;
+  try { parsed = JSON.parse(body); } catch { /* leave null */ }
+  const candleCount = parsed?.data?.candles?.length ?? null;
+  console.log(`  [upstox] HTTP ${res.status} candles=${candleCount} bytes=${body.length}`);
+  if (!res.ok) throw new Error(`Upstox ${path} -> HTTP ${res.status}: ${body.slice(0, 200)}`);
+  return parsed;
 }
 
 function istToday() {
@@ -84,7 +89,13 @@ async function main() {
   let failures = 0;
   let tokenDead = false;
 
-  for (const t of trusts) {
+  // Only refresh trusts that have a resolved ISIN. Auto-discovered stubs
+  // (needsReview, isin null) can't be priced yet — skip them, don't count as failures.
+  const priceable = trusts.filter((t) => t.isin);
+  const skipped = trusts.length - priceable.length;
+  if (skipped > 0) console.log(`Skipping ${skipped} trust(s) with no ISIN (needsReview stubs).`);
+
+  for (const t of priceable) {
     if (tokenDead) {
       console.warn(`SKIP ${t.nseSymbol}: token unauthorized — not attempting further calls`);
       failures++;
@@ -103,6 +114,7 @@ async function main() {
       if (history.length === 0) {
         console.warn(`WARN ${t.nseSymbol}: no candles returned — keeping old data`);
         failures++;
+        addAlert("no-candles", `${t.nseSymbol}: Upstox returned 0 candles (possible IP block or bad instrument key).`);
         continue;
       }
 
@@ -136,14 +148,14 @@ async function main() {
   // Only overwrite prices.json if we got at least half the universe —
   // a bad token shouldn't wipe good data.
   const okCount = Object.keys(prices).length;
-  if (okCount >= Math.ceil(trusts.length / 2)) {
+  if (okCount >= Math.ceil(priceable.length / 2)) {
     // Merge: keep old entries for trusts that failed tonight
     const old = JSON.parse(readFileSync(join(root, "data/prices.json"), "utf8"));
     const merged = { ...old, ...prices };
     writeFileSync(join(root, "data/prices.json"), JSON.stringify(merged, null, 2));
-    console.log(`\nprices.json updated for ${okCount}/${trusts.length} trusts.`);
+    console.log(`\nprices.json updated for ${okCount}/${priceable.length} priceable trusts.`);
   } else {
-    console.error(`\nOnly ${okCount}/${trusts.length} trusts updated — refusing to overwrite prices.json.`);
+    console.error(`\nOnly ${okCount}/${priceable.length} priceable trusts updated — refusing to overwrite prices.json.`);
     if (tokenDead) {
       console.error("Cause: UPSTOX_ANALYTICS_TOKEN is unauthorized. Regenerate it and update the GitHub secret.");
     }
