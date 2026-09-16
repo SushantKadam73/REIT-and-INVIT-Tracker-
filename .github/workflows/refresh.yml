@@ -1,0 +1,64 @@
+name: Nightly data refresh
+
+on:
+  schedule:
+    # 17:45 IST Mon–Fri = 12:15 UTC (IST is UTC+5:30, no DST)
+    - cron: "15 12 * * 1-5"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: nightly-refresh
+  cancel-in-progress: false
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    env:
+      UPSTOX_ANALYTICS_TOKEN: ${{ secrets.UPSTOX_ANALYTICS_TOKEN }}
+      ALERT_WEBHOOK_URL: ${{ secrets.ALERT_WEBHOOK_URL }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - name: Install PDF tooling
+        run: |
+          sudo apt-get update -qq && sudo apt-get install -y -qq poppler-utils
+          npm install --no-save pdf-parse
+      - name: Refresh EOD prices (Upstox Analytics token)
+        continue-on-error: true
+        run: node scripts/refresh-prices.mjs
+      - name: Discover new trusts + distribution filings (NSE)
+        continue-on-error: true
+        run: node scripts/discover.mjs
+      - name: Parse distribution PDFs
+        continue-on-error: true
+        run: node scripts/parse-distributions.mjs
+      - name: Cross-check fundamentals (Upstox by ISIN)
+        continue-on-error: true
+        run: node scripts/fundamentals.mjs
+      - name: Validate data
+        continue-on-error: true
+        run: node scripts/validate-data.mjs
+      - name: Send alerts (if any)
+        if: always()
+        run: node scripts/notify.mjs
+      - name: Send alerts (if any)
+        if: always()
+        run: node scripts/notify.mjs
+      - name: Commit updated data
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/
+          if git diff --cached --quiet; then
+            echo "No data changes — nothing to commit."
+            exit 0
+          fi
+          git commit -m "chore(data): nightly refresh $(date -u +%Y-%m-%d) [skip ci]"
+          git push
+        
