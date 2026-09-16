@@ -58,16 +58,75 @@ jobs:
         run: node scripts/notify.mjs
 
       - name: Commit updated data
+        shell: bash
         run: |
+          set -euo pipefail
+
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+          # Do not publish data that fails validation.
+          node scripts/validate-data.mjs
+
           git add data/
           if git diff --cached --quiet; then
             echo "No data changes — nothing to commit."
             exit 0
           fi
-          git commit -m "chore(data): nightly refresh $(date -u +%Y-%m-%d) [skip ci]"
-          # Rebase onto any commits that landed while this job ran (e.g. a manual
-          # push) so the bot push is never rejected as non-fast-forward.
-          git pull --rebase origin main
-          git push
+
+          git commit -m "chore(data): nightly refresh $(date -u +%Y-%m-%d)"
+
+          git fetch origin main
+
+          if ! git rebase origin/main; then
+            conflicts="$(git diff --name-only --diff-filter=U)"
+
+            # Only alerts can be automatically merged here.
+                        # Conflicting financial data must never be silently overwritten.
+            if [ "$conflicts" != "data/alerts.json" ]; then
+              echo "::error::Rebase failed or financial data conflicts require review."
+              printf '%s\n' "$conflicts"
+              git rebase --abort
+              exit 1
+            fi
+
+            if ! python3 - <<'PY'
+          import json
+          import subprocess
+          from pathlib import Path
+
+          def read_stage(stage):
+              raw = subprocess.check_output(
+                  ["git", "show", f":{stage}:data/alerts.json"],
+                  text=True,
+              )
+              value = json.loads(raw)
+              if not isinstance(value, list):
+                  raise ValueError("Expected alerts.json to contain an array")
+              return value
+
+                        merged = []
+          seen = set()
+          for alert in read_stage(2) + read_stage(3):
+              key = json.dumps(alert, sort_keys=True, ensure_ascii=False)
+              if key not in seen:
+                  seen.add(key)
+                  merged.append(alert)
+
+          Path("data/alerts.json").write_text(
+              json.dumps(merged, indent=2, ensure_ascii=False) + "\n",
+              encoding="utf-8",
+          )
+          PY
+            then
+              git rebase --abort
+              exit 1
+            fi
+
+            git add data/alerts.json
+            GIT_EDITOR=true git rebase --continue
+          fi
+
+          # Revalidate the combined result before publishing.
+          node scripts/validate-data.mjs
+          git push origin HEAD:main
