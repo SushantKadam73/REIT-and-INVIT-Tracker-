@@ -223,6 +223,20 @@
       "needsReview": true,
       "firstSeen": "18-Sep-202",
       "note": "Auto-discovered from NSE invitsreits feed — fill in ISIN/BSE/type before prices can refresh."
+    },
+    {
+      "isin": null,
+      "nseSymbol": "IRBIT",
+      "bseCode": null,
+      "name": "IRBIT",
+      "type": null,
+      "sector": null,
+      "sponsor": null,
+      "listedDate": null,
+      "lotSize": 1,
+      "needsReview": true,
+      "firstSeen": "21-Sep-202",
+      "note": "Auto-discovered from NSE invitsreits feed — fill in ISIN/BSE/type before prices can refresh."
     }
   ]
 }
