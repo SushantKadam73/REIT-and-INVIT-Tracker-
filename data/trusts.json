@@ -237,6 +237,34 @@
       "needsReview": true,
       "firstSeen": "21-Sep-202",
       "note": "Auto-discovered from NSE invitsreits feed — fill in ISIN/BSE/type before prices can refresh."
+    },
+    {
+      "isin": null,
+      "nseSymbol": "ROADSTAR",
+      "bseCode": null,
+      "name": "ROADSTAR",
+      "type": null,
+      "sector": null,
+      "sponsor": null,
+      "listedDate": null,
+      "lotSize": 1,
+      "needsReview": true,
+      "firstSeen": "22-Sep-202",
+      "note": "Auto-discovered from NSE invitsreits feed — fill in ISIN/BSE/type before prices can refresh."
+    },
+    {
+      "isin": null,
+      "nseSymbol": "NDRINVIT",
+      "bseCode": null,
+      "name": "NDRINVIT",
+      "type": null,
+      "sector": null,
+      "sponsor": null,
+      "listedDate": null,
+      "lotSize": 1,
+      "needsReview": true,
+      "firstSeen": "22-Sep-202",
+      "note": "Auto-discovered from NSE invitsreits feed — fill in ISIN/BSE/type before prices can refresh."
     }
   ]
 }
