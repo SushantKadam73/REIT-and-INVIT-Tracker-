@@ -88,5 +88,20 @@
     "type": "parse-failed",
     "message": "EMBASSY: could not extract any distribution data from https://nsearchives.nseindia.com/corporate/EMBASSY_18092026165043_Embassy_REIT_-_Newspaper_Advertisement-SD.pdf",
     "at": "2026-09-22T16:57:16.929Z"
+  },
+  {
+    "type": "new-trust",
+    "message": "New symbol SEITINVIT found on NSE invitsreits feed — stub added to trusts.json, needs manual review (ISIN, BSE code, type).",
+    "at": "2026-09-23T16:57:06.998Z"
+  },
+  {
+    "type": "parse-failed",
+    "message": "VERTIS: could not extract any distribution data from https://nsearchives.nseindia.com/corporate/HIGHWAYS_16092026193416_SE_Intimation_-_Record_Date.pdf",
+    "at": "2026-09-23T16:57:08.171Z"
+  },
+  {
+    "type": "parse-failed",
+    "message": "EMBASSY: could not extract any distribution data from https://nsearchives.nseindia.com/corporate/EMBASSY_18092026165043_Embassy_REIT_-_Newspaper_Advertisement-SD.pdf",
+    "at": "2026-09-23T16:57:10.649Z"
   }
 ]
