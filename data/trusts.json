@@ -279,6 +279,20 @@
       "needsReview": true,
       "firstSeen": "23-Sep-202",
       "note": "Auto-discovered from NSE invitsreits feed — fill in ISIN/BSE/type before prices can refresh."
+    },
+    {
+      "isin": null,
+      "nseSymbol": "ANZEN",
+      "bseCode": null,
+      "name": "ANZEN",
+      "type": null,
+      "sector": null,
+      "sponsor": null,
+      "listedDate": null,
+      "lotSize": 1,
+      "needsReview": true,
+      "firstSeen": "24-Sep-202",
+      "note": "Auto-discovered from NSE invitsreits feed — fill in ISIN/BSE/type before prices can refresh."
     }
   ]
 }
