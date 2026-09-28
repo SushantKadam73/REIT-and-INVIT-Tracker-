@@ -293,6 +293,34 @@
       "needsReview": true,
       "firstSeen": "24-Sep-202",
       "note": "Auto-discovered from NSE invitsreits feed — fill in ISIN/BSE/type before prices can refresh."
+    },
+    {
+      "isin": null,
+      "nseSymbol": "OSEINTRUST",
+      "bseCode": null,
+      "name": "OSEINTRUST",
+      "type": null,
+      "sector": null,
+      "sponsor": null,
+      "listedDate": null,
+      "lotSize": 1,
+      "needsReview": true,
+      "firstSeen": "28-Sep-202",
+      "note": "Auto-discovered from NSE invitsreits feed — fill in ISIN/BSE/type before prices can refresh."
+    },
+    {
+      "isin": null,
+      "nseSymbol": "NHIT",
+      "bseCode": null,
+      "name": "NHIT",
+      "type": null,
+      "sector": null,
+      "sponsor": null,
+      "listedDate": null,
+      "lotSize": 1,
+      "needsReview": true,
+      "firstSeen": "28-Sep-202",
+      "note": "Auto-discovered from NSE invitsreits feed — fill in ISIN/BSE/type before prices can refresh."
     }
   ]
 }
