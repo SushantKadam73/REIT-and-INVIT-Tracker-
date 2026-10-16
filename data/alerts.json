@@ -353,5 +353,30 @@
     "type": "parse-failed",
     "message": "EMBASSY: could not extract any distribution data from https://nsearchives.nseindia.com/corporate/EMBASSY_14102026193056_EmbassyREITIntimationofBoardMeeting.pdf",
     "at": "2026-10-15T16:59:58.906Z"
+  },
+  {
+    "type": "parse-failed",
+    "message": "VERTIS: could not extract any distribution data from https://nsearchives.nseindia.com/corporate/HIGHWAYS_16092026193416_SE_Intimation_-_Record_Date.pdf",
+    "at": "2026-10-16T16:38:13.635Z"
+  },
+  {
+    "type": "parse-failed",
+    "message": "EMBASSY: could not extract any distribution data from https://nsearchives.nseindia.com/corporate/EMBASSY_18092026165043_Embassy_REIT_-_Newspaper_Advertisement-SD.pdf",
+    "at": "2026-10-16T16:38:16.830Z"
+  },
+  {
+    "type": "parse-failed",
+    "message": "EMBASSY: could not extract any distribution data from https://nsearchives.nseindia.com/corporate/EMBASSY_25092026163941_EmbassyREITRecorddateforredemption_SeriesVB.pdf",
+    "at": "2026-10-16T16:38:20.247Z"
+  },
+  {
+    "type": "parse-failed",
+    "message": "EMBASSY: could not extract any distribution data from https://nsearchives.nseindia.com/corporate/EMBASSY_14102026193056_EmbassyREITIntimationofBoardMeeting.pdf",
+    "at": "2026-10-16T16:38:21.651Z"
+  },
+  {
+    "type": "parse-failed",
+    "message": "MINDSPACE: could not extract any distribution data from https://nsearchives.nseindia.com/corporate/MINDSPACE_16102026211528_IntimationofBoardMeetingandforthequarterendedSeptember302026.pdf",
+    "at": "2026-10-16T16:38:22.543Z"
   }
 ]
