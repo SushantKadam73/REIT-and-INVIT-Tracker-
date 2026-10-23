@@ -493,5 +493,40 @@
     "type": "parse-failed",
     "message": "ANANTAM: could not extract any distribution data from https://nsearchives.nseindia.com/corporate/ANANTAM_22102026152225_BM_Record_Date_Intimation_22102026.pdf",
     "at": "2026-10-22T17:10:06.633Z"
+  },
+  {
+    "type": "parse-failed",
+    "message": "VERTIS: could not extract any distribution data from https://nsearchives.nseindia.com/corporate/HIGHWAYS_16092026193416_SE_Intimation_-_Record_Date.pdf",
+    "at": "2026-10-23T17:06:42.740Z"
+  },
+  {
+    "type": "parse-failed",
+    "message": "EMBASSY: could not extract any distribution data from https://nsearchives.nseindia.com/corporate/EMBASSY_18092026165043_Embassy_REIT_-_Newspaper_Advertisement-SD.pdf",
+    "at": "2026-10-23T17:06:50.209Z"
+  },
+  {
+    "type": "parse-failed",
+    "message": "EMBASSY: could not extract any distribution data from https://nsearchives.nseindia.com/corporate/EMBASSY_25092026163941_EmbassyREITRecorddateforredemption_SeriesVB.pdf",
+    "at": "2026-10-23T17:06:51.259Z"
+  },
+  {
+    "type": "parse-failed",
+    "message": "EMBASSY: could not extract any distribution data from https://nsearchives.nseindia.com/corporate/EMBASSY_14102026193056_EmbassyREITIntimationofBoardMeeting.pdf",
+    "at": "2026-10-23T17:06:52.763Z"
+  },
+  {
+    "type": "parse-failed",
+    "message": "MINDSPACE: could not extract any distribution data from https://nsearchives.nseindia.com/corporate/MINDSPACE_16102026211528_IntimationofBoardMeetingandforthequarterendedSeptember302026.pdf",
+    "at": "2026-10-23T17:06:53.570Z"
+  },
+  {
+    "type": "parse-failed",
+    "message": "KRT: could not extract any distribution data from https://nsearchives.nseindia.com/corporate/KRT_21102026152917_Prior_Intimation_Board_Meeting_03_Nov_2026.pdf",
+    "at": "2026-10-23T17:06:54.181Z"
+  },
+  {
+    "type": "parse-failed",
+    "message": "ANANTAM: could not extract any distribution data from https://nsearchives.nseindia.com/corporate/ANANTAM_22102026152225_BM_Record_Date_Intimation_22102026.pdf",
+    "at": "2026-10-23T17:06:55.061Z"
   }
 ]
