@@ -568,5 +568,45 @@
     "type": "parse-failed",
     "message": "IRBINVIT: could not extract any distribution data from https://nsearchives.nseindia.com/corporate/IRBINVIT_26102026163226_Board_meeting_Intimation_IM.pdf",
     "at": "2026-10-26T18:41:19.627Z"
+  },
+  {
+    "type": "parse-failed",
+    "message": "VERTIS: could not extract any distribution data from https://nsearchives.nseindia.com/corporate/HIGHWAYS_16092026193416_SE_Intimation_-_Record_Date.pdf",
+    "at": "2026-10-27T17:59:40.691Z"
+  },
+  {
+    "type": "parse-failed",
+    "message": "EMBASSY: could not extract any distribution data from https://nsearchives.nseindia.com/corporate/EMBASSY_18092026165043_Embassy_REIT_-_Newspaper_Advertisement-SD.pdf",
+    "at": "2026-10-27T17:59:43.162Z"
+  },
+  {
+    "type": "parse-failed",
+    "message": "EMBASSY: could not extract any distribution data from https://nsearchives.nseindia.com/corporate/EMBASSY_25092026163941_EmbassyREITRecorddateforredemption_SeriesVB.pdf",
+    "at": "2026-10-27T17:59:44.086Z"
+  },
+  {
+    "type": "parse-failed",
+    "message": "EMBASSY: could not extract any distribution data from https://nsearchives.nseindia.com/corporate/EMBASSY_14102026193056_EmbassyREITIntimationofBoardMeeting.pdf",
+    "at": "2026-10-27T17:59:45.240Z"
+  },
+  {
+    "type": "parse-failed",
+    "message": "MINDSPACE: could not extract any distribution data from https://nsearchives.nseindia.com/corporate/MINDSPACE_16102026211528_IntimationofBoardMeetingandforthequarterendedSeptember302026.pdf",
+    "at": "2026-10-27T17:59:46.101Z"
+  },
+  {
+    "type": "parse-failed",
+    "message": "KRT: could not extract any distribution data from https://nsearchives.nseindia.com/corporate/KRT_21102026152917_Prior_Intimation_Board_Meeting_03_Nov_2026.pdf",
+    "at": "2026-10-27T17:59:47.080Z"
+  },
+  {
+    "type": "parse-failed",
+    "message": "ANANTAM: could not extract any distribution data from https://nsearchives.nseindia.com/corporate/ANANTAM_22102026152225_BM_Record_Date_Intimation_22102026.pdf",
+    "at": "2026-10-27T17:59:48.000Z"
+  },
+  {
+    "type": "parse-failed",
+    "message": "IRBINVIT: could not extract any distribution data from https://nsearchives.nseindia.com/corporate/IRBINVIT_26102026163226_Board_meeting_Intimation_IM.pdf",
+    "at": "2026-10-27T17:59:49.380Z"
   }
 ]
