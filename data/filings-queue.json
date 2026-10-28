@@ -62,5 +62,29 @@
     "pdfUrl": "https://nsearchives.nseindia.com/corporate/IRBINVIT_26102026163226_Board_meeting_Intimation_IM.pdf",
     "seq_id": "106828565",
     "queuedAt": "2026-10-26T18:41:09.922Z"
+  },
+  {
+    "symbol": "CUBEINVIT",
+    "date": "28-Oct-202",
+    "desc": "Cube Highways Trust has informed the Exchange that Record date for the purpose of Distribution  is 31-Oct-2026.",
+    "pdfUrl": "https://nsearchives.nseindia.com/corporate/CUBEINVIT_28102026191621_OutcomeofBM28102026.pdf",
+    "seq_id": "106833028",
+    "queuedAt": "2026-10-28T18:20:36.895Z"
+  },
+  {
+    "symbol": "BIRET",
+    "date": "28-Oct-202",
+    "desc": "Brookfield India Real Estate Trust has informed the Exchange that Record date for the purpose of Distribution  is 05-Nov-2026.",
+    "pdfUrl": "https://nsearchives.nseindia.com/corporate/BIRET_28102026172911_Prior_Intimation_of_BM__02112026_.pdf",
+    "seq_id": "106832562",
+    "queuedAt": "2026-10-28T18:20:36.895Z"
+  },
+  {
+    "symbol": "SEITINVIT",
+    "date": "28-Oct-202",
+    "desc": "Sustainable Energy Infra Trust has informed the Exchange that Record date for the purpose of Distribution is 31-Oct-2026.",
+    "pdfUrl": "https://nsearchives.nseindia.com/corporate/SEITINVIT_28102026160606_SEITOutcomeBM28102026vfsd.pdf",
+    "seq_id": "106832248",
+    "queuedAt": "2026-10-28T18:20:36.895Z"
   }
 ]
