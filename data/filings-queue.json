@@ -86,5 +86,29 @@
     "pdfUrl": "https://nsearchives.nseindia.com/corporate/SEITINVIT_28102026160606_SEITOutcomeBM28102026vfsd.pdf",
     "seq_id": "106832248",
     "queuedAt": "2026-10-28T18:20:36.895Z"
+  },
+  {
+    "symbol": "NDRINVIT",
+    "date": "29-Oct-202",
+    "desc": "NDR INVIT Trust has informed the Exchange that Record date for the purpose of Distribution  is 06-Nov-2026.",
+    "pdfUrl": "https://nsearchives.nseindia.com/corporate/NDRINVIT_29102026151930_IntimationofBM.pdf",
+    "seq_id": "106834260",
+    "queuedAt": "2026-10-29T18:27:50.761Z"
+  },
+  {
+    "symbol": "SHREMINVIT",
+    "date": "29-Oct-202",
+    "desc": "Shrem Invit has informed the Exchange that Record date for the purpose of 22nd Distribution  is 06-Nov-2026.",
+    "pdfUrl": "https://nsearchives.nseindia.com/corporate/SHREMINVIT_29102026150650_BM_-_Intimation.pdf",
+    "seq_id": "106834227",
+    "queuedAt": "2026-10-29T18:27:50.761Z"
+  },
+  {
+    "symbol": "IRBINVIT",
+    "date": "29-Oct-202",
+    "desc": "IRB InvIT Fund has informed the Exchange that Record date for the purpose of Distribution  is 03-Nov-2026.",
+    "pdfUrl": "https://nsearchives.nseindia.com/corporate/IRBINVIT_29102026145729_OutcomeofBM_IRBINVITFUND_sd.pdf",
+    "seq_id": "106834194",
+    "queuedAt": "2026-10-29T18:27:50.761Z"
   }
 ]
