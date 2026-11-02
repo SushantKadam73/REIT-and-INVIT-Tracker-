@@ -134,5 +134,37 @@
     "pdfUrl": "https://nsearchives.nseindia.com/corporate/INDINFRINVIT_30102026124139_BM_Intimation_DSC.pdf",
     "seq_id": "106836075",
     "queuedAt": "2026-10-30T18:00:11.783Z"
+  },
+  {
+    "symbol": "BAGMANE",
+    "date": "02-Nov-202",
+    "desc": "Bagmane Prime Office REIT has informed the Exchange that Record date for the purpose of Distribution  is 05-Nov-2026.",
+    "pdfUrl": "https://nsearchives.nseindia.com/corporate/BAGMANE_02112026215302_BagmaneREITOutcomeofBMNovember022026.pdf",
+    "seq_id": "106840745",
+    "queuedAt": "2026-11-02T21:42:51.377Z"
+  },
+  {
+    "symbol": "MINDSPACE",
+    "date": "02-Nov-202",
+    "desc": "Mindspace Business Parks REIT has submitted to the Exchange, inter alia, distribution, financial results and statements for the quarter and half year ended September 30, 2026.",
+    "pdfUrl": "https://nsearchives.nseindia.com/corporate/MINDSPACE_02112026172540_Outcome_BM_November_02_2026.pdf",
+    "seq_id": "106840007",
+    "queuedAt": "2026-11-02T21:42:51.377Z"
+  },
+  {
+    "symbol": "EMBASSY",
+    "date": "02-Nov-202",
+    "desc": "Embassy Office Parks REIT has informed the Exchange regarding Intimation of record date for redemption of Commercial Papers issued by Embassy Office Parks REIT.",
+    "pdfUrl": "https://nsearchives.nseindia.com/corporate/EMBASSY_02112026165032_EmbassyREITRecorddateforredemptionCPsigned.pdf",
+    "seq_id": "106839846",
+    "queuedAt": "2026-11-02T21:42:51.377Z"
+  },
+  {
+    "symbol": "BIRET",
+    "date": "02-Nov-202",
+    "desc": "Brookfield India Real Estate Trust has informed the Exchange that Record date for the purpose of Distribution  is 05-Nov-2026.",
+    "pdfUrl": "https://nsearchives.nseindia.com/corporate/BIRET_02112026141234_Outcome_of_Board_Meeting_-_Financial_Result.pdf",
+    "seq_id": "106839451",
+    "queuedAt": "2026-11-02T21:42:51.377Z"
   }
 ]
