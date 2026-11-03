@@ -166,5 +166,37 @@
     "pdfUrl": "https://nsearchives.nseindia.com/corporate/BIRET_02112026141234_Outcome_of_Board_Meeting_-_Financial_Result.pdf",
     "seq_id": "106839451",
     "queuedAt": "2026-11-02T21:42:51.377Z"
+  },
+  {
+    "symbol": "NDRINVIT",
+    "date": "03-Nov-202",
+    "desc": "NDR INVIT Trust has informed the Exchange that Record date for the purpose of Distribution  is 06-Nov-2026.",
+    "pdfUrl": "https://nsearchives.nseindia.com/corporate/NDRINVIT_03112026232107_OutcomeofBM03112026signed.pdf",
+    "seq_id": "106843191",
+    "queuedAt": "2026-11-03T19:29:21.078Z"
+  },
+  {
+    "symbol": "IRBIT",
+    "date": "03-Nov-202",
+    "desc": "IRB INFRASTRUCTURE TRUST has informed the Exchange that Record date for the purpose of Distribution  is 06-Nov-2026.",
+    "pdfUrl": "https://nsearchives.nseindia.com/corporate/IRBIT_03112026210901_Outcome_BM_IRBIT__Financial_Results_-sd.pdf",
+    "seq_id": "106842973",
+    "queuedAt": "2026-11-03T19:29:21.078Z"
+  },
+  {
+    "symbol": "SHREMINVIT",
+    "date": "03-Nov-202",
+    "desc": "Shrem InvIT has informed the Exchange that Record date for the purpose of Distribution  is 06-Nov-2026.",
+    "pdfUrl": "https://nsearchives.nseindia.com/corporate/SHREMINVIT_03112026190423_ShremInvITOutcomeofBoardMeeting03112026sd.pdf",
+    "seq_id": "106842644",
+    "queuedAt": "2026-11-03T19:29:21.078Z"
+  },
+  {
+    "symbol": "SHREMINVIT",
+    "date": "03-Nov-202",
+    "desc": "Shrem InvIT has submitted to the Exchange, the Unaudited financial results for the quarter and half year ended September 30, 2026 and Distribution.",
+    "pdfUrl": "https://nsearchives.nseindia.com/corporate/SHREMINVIT_03112026185256_ShremInvITOutcomeofBoardMeeting03112026sd.pdf",
+    "seq_id": "106842596",
+    "queuedAt": "2026-11-03T19:29:21.078Z"
   }
 ]
