@@ -198,5 +198,29 @@
     "pdfUrl": "https://nsearchives.nseindia.com/corporate/SHREMINVIT_03112026185256_ShremInvITOutcomeofBoardMeeting03112026sd.pdf",
     "seq_id": "106842596",
     "queuedAt": "2026-11-03T19:29:21.078Z"
+  },
+  {
+    "symbol": "RIIT",
+    "date": "04-Nov-202",
+    "desc": "Raajmarg Infra Investment Trust has informed the Exchange that Record date for the purpose of Distribution  is 09-Nov-2026.",
+    "pdfUrl": "https://nsearchives.nseindia.com/corporate/RIIT_04112026200608_SE_Intimation_BM_Outcome_RIIT.pdf",
+    "seq_id": "106845690",
+    "queuedAt": "2026-11-04T19:44:08.944Z"
+  },
+  {
+    "symbol": "TVSINVIT",
+    "date": "04-Nov-202",
+    "desc": "TVS Infrastructure Trust has informed the Exchange that Record date for the purpose of Distribution  is 09-Nov-2026.",
+    "pdfUrl": "https://nsearchives.nseindia.com/corporate/TVSINVIT_04112026193956_TVSTrustOutcomeofBoardMeetingQ2FY27.pdf",
+    "seq_id": "106845600",
+    "queuedAt": "2026-11-04T19:44:08.944Z"
+  },
+  {
+    "symbol": "PGINVIT",
+    "date": "04-Nov-202",
+    "desc": "POWERGRID Infrastructure Investment Trust has informed the Exchange that Record date for the purpose of Distribution  is 17-Nov-2026.",
+    "pdfUrl": "https://nsearchives.nseindia.com/corporate/PGINVIT_04112026165349_INTIMATIONBM.pdf",
+    "seq_id": "106844660",
+    "queuedAt": "2026-11-04T19:44:08.944Z"
   }
 ]
