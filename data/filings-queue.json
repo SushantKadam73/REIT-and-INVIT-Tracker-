@@ -246,5 +246,13 @@
     "pdfUrl": "https://nsearchives.nseindia.com/corporate/CITIUSINVT_06112026164124_DistributionLetter.pdf",
     "seq_id": "106850738",
     "queuedAt": "2026-11-06T19:24:38.749Z"
+  },
+  {
+    "symbol": "CAPINVIT",
+    "date": "09-Nov-202",
+    "desc": "Capital Infra Trust has informed the Exchange that Record date for the purpose of Distribution  is 18-Nov-2026.",
+    "pdfUrl": "https://nsearchives.nseindia.com/corporate/CAPINVIT_09112026213930_SE_PriorIntimation.pdf",
+    "seq_id": "106853723",
+    "queuedAt": "2026-11-09T22:20:20.596Z"
   }
 ]
