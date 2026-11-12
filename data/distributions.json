@@ -528,6 +528,20 @@
       "exDate": "2025-08-08",
       "paymentDate": "2025-08-18",
       "sourceUrl": "https://www.scribd.com/document/898179204/04408685-40dd-4e27-89c6-4de0c6881ce8"
+    },
+    {
+      "quarter": null,
+      "fy": null,
+      "totalDPU": 3,
+      "interest": null,
+      "dividend": null,
+      "returnOfCapital": null,
+      "other": null,
+      "recordDate": null,
+      "exDate": null,
+      "paymentDate": null,
+      "sourceUrl": "https://nsearchives.nseindia.com/corporate/PGINVIT_12112026134413_INTIMATIONBM.pdf",
+      "note": "split unavailable — format not recognised"
     }
   ],
   "INDUSINVIT": [
