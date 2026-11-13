@@ -262,5 +262,29 @@
     "pdfUrl": "https://nsearchives.nseindia.com/corporate/OSEINTRUST_12112026172031_INTIMATION_FOR_RECORD_DATE__1_.pdf",
     "seq_id": "106857000",
     "queuedAt": "2026-11-12T19:53:11.560Z"
+  },
+  {
+    "symbol": "VERTIS",
+    "date": "13-Nov-202",
+    "desc": "Vertis Infrastructure Trust has informed the Exchange that Record date for the purpose of Distribution  is 18-Nov-2026.",
+    "pdfUrl": "https://nsearchives.nseindia.com/corporate/HIGHWAYS_13112026213832_Outcome.pdf",
+    "seq_id": "106859983",
+    "queuedAt": "2026-11-13T19:40:13.298Z"
+  },
+  {
+    "symbol": "CAPINVIT",
+    "date": "13-Nov-202",
+    "desc": "Capital Infra Trust has informed the Exchange that Record date for the purpose of Distribution  is 18-Nov-2026.",
+    "pdfUrl": "https://nsearchives.nseindia.com/corporate/CAPINVIT_13112026204410_SE_RecordDate.pdf",
+    "seq_id": "106859861",
+    "queuedAt": "2026-11-13T19:40:13.298Z"
+  },
+  {
+    "symbol": "RIIT",
+    "date": "13-Nov-202",
+    "desc": "Raajmarg Infra Investment Trust has informed the Exchange regarding 'Intimation regarding completion of payment of Distribution to Unitholders of Raajmarg Infra Investment Trust for the quarter ended September 30, 2026'.",
+    "pdfUrl": "https://nsearchives.nseindia.com/corporate/RIIT_13112026183616_SE_Intimation_Distribution_Sept_26.pdf",
+    "seq_id": "106859492",
+    "queuedAt": "2026-11-13T19:40:13.298Z"
   }
 ]
